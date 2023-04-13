@@ -82,7 +82,7 @@ export default {
 @use "../style/partials/variables" as *;
 
 header {
-    width: 60%;
+    width: 65%;
     height: 130px;
     margin: 0 auto;
     @include flex(center, space-between, row);
