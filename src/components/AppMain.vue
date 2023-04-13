@@ -59,7 +59,7 @@ export default {
     height: 130px;
 
     .content {
-        width: 65%;
+        width: 70%;
         height: 130px;
         margin: 0 auto;
         @include flex(center, start, row);
@@ -74,9 +74,11 @@ export default {
 .bottom {
     background-color: $primary;
     height: 150px;
+    position: relative;
+    z-index: 999;
 
     .features {
-        width: 65%;
+        width: 70%;
         height: 150px;
         margin: 0 auto;
         @include flex(center, center, none);
