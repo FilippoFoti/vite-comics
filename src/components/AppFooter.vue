@@ -3,116 +3,114 @@ export default {
     name: "AppFooter",
     data() {
         return {
-            linksFooter: {
-                "DC COMICS": [
-                    {
-                        name: "Characters",
-                        url: "#"
-                    },
-                    {
-                        name: "Comics",
-                        url: "#"
-                    },
-                    {
-                        name: "Movies",
-                        url: "#"
-                    },
-                    {
-                        name: "TV",
-                        url: "#"
-                    },
-                    {
-                        name: "Games",
-                        url: "#"
-                    },
-                    {
-                        name: "Videos",
-                        url: "#"
-                    },
-                    {
-                        name: "News",
-                        url: "#"
-                    }
-                ],
-                "DC": [
-                    {
-                        name: "Terms Of Use",
-                        url: "#"
-                    },
-                    {
-                        name: "Privacy policy(New)",
-                        url: "#"
-                    },
-                    {
-                        name: "Ad Choices",
-                        url: "#"
-                    },
-                    {
-                        name: "Advertising",
-                        url: "#"
-                    },
-                    {
-                        name: "Jobs",
-                        url: "#"
-                    },
-                    {
-                        name: "CPSC Certificates",
-                        url: "#"
-                    },
-                    {
-                        name: "Subscriptions",
-                        url: "#"
-                    },
-                    {
-                        name: "Talent Workshops",
-                        url: "#"
-                    },
-                    {
-                        name: "Ratings",
-                        url: "#"
-                    },
-                    {
-                        name: "Shop Help",
-                        url: "#"
-                    },
-                    {
-                        name: "Contact Us",
-                        url: "#"
-                    }
-                ],
-                "SITES": [
-                    {
-                        name: "DC",
-                        url: "#"
-                    },
-                    {
-                        name: "MAD Magazine",
-                        url: "#"
-                    },
-                    {
-                        name: "DC Kids",
-                        url: "#"
-                    },
-                    {
-                        name: "DC Universe",
-                        url: "#"
-                    },
-                    {
-                        name: "DC Power Visa",
-                        url: "#"
-                    }
-                ],
-                "SHOP": [
-                    {
-                        name: "Shop DC",
-                        url: "#"
-                    },
-                    {
-                        name: "Shop DC Collectibles",
-                        url: "#"
-                    }
-                ]
-            },
+            dcComics: [
+                {
+                    name: "Characters",
+                    url: "#"
+                },
+                {
+                    name: "Comics",
+                    url: "#"
+                },
+                {
+                    name: "Movies",
+                    url: "#"
+                },
+                {
+                    name: "TV",
+                    url: "#"
+                },
+                {
+                    name: "Games",
+                    url: "#"
+                },
+                {
+                    name: "Videos",
+                    url: "#"
+                },
+                {
+                    name: "News",
+                    url: "#"
+                }
+            ],
+            dc: [
+                {
+                    name: "Terms Of Use",
+                    url: "#"
+                },
+                {
+                    name: "Privacy policy(New)",
+                    url: "#"
+                },
+                {
+                    name: "Ad Choices",
+                    url: "#"
+                },
+                {
+                    name: "Advertising",
+                    url: "#"
+                },
+                {
+                    name: "Jobs",
+                    url: "#"
+                },
+                {
+                    name: "CPSC Certificates",
+                    url: "#"
+                },
+                {
+                    name: "Subscriptions",
+                    url: "#"
+                },
+                {
+                    name: "Talent Workshops",
+                    url: "#"
+                },
+                {
+                    name: "Ratings",
+                    url: "#"
+                },
+                {
+                    name: "Shop Help",
+                    url: "#"
+                },
+                {
+                    name: "Contact Us",
+                    url: "#"
+                }
+            ],
+            sites: [
+                {
+                    name: "DC",
+                    url: "#"
+                },
+                {
+                    name: "MAD Magazine",
+                    url: "#"
+                },
+                {
+                    name: "DC Kids",
+                    url: "#"
+                },
+                {
+                    name: "DC Universe",
+                    url: "#"
+                },
+                {
+                    name: "DC Power Visa",
+                    url: "#"
+                }
+            ],
+            shop: [
+                {
+                    name: "Shop DC",
+                    url: "#"
+                },
+                {
+                    name: "Shop DC Collectibles",
+                    url: "#"
+                }
+            ],
             logoFooter: [
                 {
                     img: "footer-facebook.png",
@@ -149,13 +147,37 @@ export default {
     <footer>
         <div class="top">
             <div class="left">
-                <div class="list" v-for="(item, key) in linksFooter">
-                    <h3>{{ key }}</h3>
-                    <ul>
-                        <li v-for="link in item">
-                            <a :href="link.url">{{ link.name }}</a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col">
+                        <h3>DC COMICS</h3>
+                        <ul>
+                            <li v-for="link in dcComics">
+                                <a :href="link.url">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                        <h3>SHOP</h3>
+                        <ul>
+                            <li v-for="link in shop">
+                                <a :href="link.url">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>DC</h3>
+                        <ul>
+                            <li v-for="link in dc">
+                                <a :href="link.url">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>SITES</h3>
+                        <ul>
+                            <li v-for="link in sites">
+                                <a :href="link.url">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="right">
@@ -187,7 +209,6 @@ export default {
 @use "../style/partials/variables" as *;
 
 footer {
-    height: 350px;
     background-image: url(../assets/img/footer-bg.jpg);
     background-position: center;
     display: flex;
@@ -199,34 +220,38 @@ footer {
         display: flex;
         position: relative;
         .left {
-            width: 35%;
-            display: flex;
-            flex-wrap: wrap;
-            .list {
-                width: calc(100% / 3);
-                height: 60%;
-            
-                h3 {
-                    color: white;
-                    font-size: 1.1rem;
-                    padding: 10px 0;
-                }
-                
-                ul {
-                    list-style-type: none;
+            width: 40%;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 30px 0;
+                .col {
+                    width: calc(100% / 3);
+    
+                    h3 {
+                        color: white;
+                        font-size: 1.1rem;
+                        padding: 10px 0;
+                    }
                     
-                    a {
-                        color: rgba(149, 149, 149, 1);
-                        font-size: 0.7rem;
-                        text-decoration: none;
+                    ul {
+                        list-style-type: none;
+                        
+                        a {
+                            color: rgba(149, 149, 149, 1);
+                            font-size: 0.7rem;
+                            text-decoration: none;
+                        }
                     }
                 }
             }
+
         }
         .right {
             position: absolute;
             right: 0;
-            bottom: -17%;
+            bottom: -20%;
             z-index: 0;
 
             img {

@@ -15,7 +15,6 @@ export default {
         </figure>
         <h2>{{ series }}</h2>
     </div>
-
 </template>
 
 <style scoped lang="scss">
@@ -38,7 +37,7 @@ export default {
     h2 {
         padding-top: 10px;
         font-size: 0.9rem;
-        text-align:start;
+        text-align: start;
         color: white;
         font-weight: 400;
     }

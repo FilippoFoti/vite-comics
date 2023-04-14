@@ -223,6 +223,7 @@ export default {
 
                     img {
                         height: 50px;
+                        max-width: 50px;
                     }
                 }
                 
