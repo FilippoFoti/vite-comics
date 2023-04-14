@@ -1,6 +1,42 @@
 <script>
 export default {
-    name: "AppMain"
+    name: "AppMain",
+    data() {
+        return {
+            features: [
+                {
+                    img: "buy-comics-digital-comics.png",
+                    name: "DIGITAL COMICS",
+                    url: "#"
+                },
+                {
+                    img: "buy-comics-merchandise.png",
+                    name: "DC MERCHANDISE",
+                    url: "#"
+                },
+                {
+                    img: "buy-comics-subscriptions.png",
+                    name: "SUBSCRIPTION",
+                    url: "#"
+                },
+                {
+                    img: "buy-comics-shop-locator.png",
+                    name: "COMIC SHOP LOCATOR",
+                    url: "#"
+                },
+                {
+                    img: "buy-dc-power-visa.svg",
+                    name: "DC POWER VISA",
+                    url: "#"
+                }
+            ]
+        }
+    },
+    methods: {
+        getImagePath(img) {
+            return new URL(`../assets/img/${img.img}`, import.meta.url).href;
+        }
+    }
 }
 </script>
 
@@ -14,35 +50,11 @@ export default {
         <div class="bottom">
             <div class="features">
                 <ul>
-                    <li>
-                        <div class="logo">
-                            <img src="../assets/img/buy-comics-digital-comics.png" alt="DIGITAL COMICS">
-                        </div>
-                        <p>DIGITAL COMICS</p>
-                    </li>
-                    <li>
-                        <div class="logo">
-                            <img src="../assets/img/buy-comics-merchandise.png" alt="DC MERCHANDISE">
-                        </div>
-                        <p>DC MERCHANDISE</p>
-                    </li>
-                    <li>
-                        <div class="logo">
-                            <img src="../assets/img/buy-comics-subscriptions.png" alt="SUBSCRIPTION">
-                        </div>
-                        <p>SUBSCRIPTION</p>
-                    </li>
-                    <li>
-                        <div class="logo">
-                            <img src="../assets/img/buy-comics-shop-locator.png" alt="COMIC SHOP LOCATOR">
-                        </div>
-                        <p>COMIC SHOP LOCATOR</p>
-                    </li>
-                    <li>
-                        <div class="logo">
-                            <img src="../assets/img/buy-dc-power-visa.svg" alt="DC POWER VISA">
-                        </div>
-                        <p>DC POWER VISA</p>
+                    <li v-for="image in features">
+                        <a :href="image.url">
+                            <img :src="getImagePath(img)" alt="Logo">
+                            <p>{{ img.name }}</p>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +93,7 @@ export default {
         width: 70%;
         height: 150px;
         margin: 0 auto;
-        @include flex(center, center, none);
+        @include flex(center, center, stretch);
 
         ul {
             width: 100%;
@@ -92,9 +104,12 @@ export default {
             li {
                 height: 150px;
                 width: calc(100% / 5);
-                @include flex(center, center, none);
+                @include flex(center, center, stretch);
 
-                .logo {
+                a {
+                    text-decoration: none;
+                    @include flex(center, center, stretch);
+
 
                     img {
                         height: 50px;
