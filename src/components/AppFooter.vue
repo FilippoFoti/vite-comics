@@ -162,6 +162,23 @@ export default {
                 <img src="../assets/img/dc-logo-bg.png" alt="Logo">
             </div>
         </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="left">
+                    <button>SING-UP NOW!</button>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>FOLLOW US</li>
+                        <li v-for="item in logoFooter">
+                            <a :href="item.url">
+                                <img :src="getImgPath(item)" alt="Logo">
+                            </a>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -175,6 +192,7 @@ footer {
     background-position: center;
     display: flex;
     align-items: center;
+    flex-direction: column;
     .top {
         width: 70%;
         margin: 0 auto;
@@ -215,6 +233,45 @@ footer {
                 width: 450px;
             }
 
+        }
+    }
+    .bottom {
+        width: 100%;
+        background-color: rgba(48, 48, 48, 1);
+        position: relative;
+
+        .container {
+            width: 70%;
+            height: 100px;
+            margin: 0 auto;
+            @include flex(center, space-between, stretch);
+
+            .left {
+                button {
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    padding: 10px 10px;
+                    background-color: rgba(48, 48, 48, 1);
+                    border: 3px solid $primary;
+                    cursor: pointer;
+                }
+            }
+
+            .right {
+                ul {
+                    @include flex(center, center, stretch);
+                    gap: 20px;
+                    list-style-type: none;
+
+                    li {
+                        color: $primary;
+                        font-size: 1rem;
+                        text-decoration: none;
+                        font-weight: 700;
+                    }
+                }
+            }
         }
     }
 }
